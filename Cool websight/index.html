@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Geometry Dash</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+        }
+        #gameCanvas {
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const player = {
+            x: 50,
+            y: canvas.height - 50,
+            width: 40,
+            height: 40,
+            jumping: false,
+            yVelocity: 0
+        };
+
+        let obstacles = [];
+        let score = 0;
+        let gameLoop;
+        let obstacleSpeed = 5;
+
+        function drawPlayer() {
+            ctx.fillStyle = '#00ff00';
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+        }
+
+        function drawObstacles() {
+            ctx.fillStyle = '#ff0000';
+            obstacles.forEach(obstacle => {
+                ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+            });
+        }
+
+        function updateObstacles() {
+            if (Math.random() < 0.02) {
+                obstacles.push({
+                    x: canvas.width,
+                    y: canvas.height - 50,
+                    width: 30,
+                    height: 50
+                });
+            }
+
+            for (let i = obstacles.length - 1; i >= 0; i--) {
+                if (obstacles[i].x + obstacles[i].width <= 0) {
+                    obstacles.splice(i, 1); // Proper removal of off-screen obstacles
+                } else {
+                    obstacles[i].x -= obstacleSpeed;
+                }
+            }
+        }
+
+        function checkCollision() {
+            return obstacles.some(obstacle =>
+                player.x < obstacle.x + obstacle.width &&
+                player.x + player.width > obstacle.x &&
+                player.y < obstacle.y + obstacle.height &&
+                player.y + player.height > obstacle.y
+            );
+        }
+
+        function jump() {
+            if (!player.jumping) {
+                player.jumping = true;
+                player.yVelocity = -15;
+            }
+        }
+
+        function updatePlayer() {
+            player.y += player.yVelocity;
+            player.yVelocity += 0.8; // Gravity
+
+            if (player.y + player.height > canvas.height - 10) {
+                player.y = canvas.height - player.height - 10;
+                player.jumping = false;
+                player.yVelocity = 0;
+            }
+        }
+
+        function drawScore() {
+            ctx.fillStyle = '#fff';
+            ctx.font = '20px Arial';
+            ctx.fillText(`Score: ${score}`, 10, 30);
+        }
+
+        function gameOver() {
+            cancelAnimationFrame(gameLoop);
+            gameLoop = null; // Allow the game to restart
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#fff';
+            ctx.font = '40px Arial';
+            ctx.fillText('Game Over', canvas.width / 2 - 100, canvas.height / 2);
+            ctx.font = '20px Arial';
+            ctx.fillText(`Final Score: ${score}`, canvas.width / 2 - 60, canvas.height / 2 + 40);
+            ctx.fillText('Click to restart', canvas.width / 2 - 60, canvas.height / 2 + 80);
+        }
+
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            updatePlayer();
+            updateObstacles();
+            
+            drawPlayer();
+            drawObstacles();
+            drawScore();
+
+            if (checkCollision()) {
+                gameOver();
+                return;
+            }
+
+            score++;
+            if (score % 500 === 0) obstacleSpeed += 0.5;
+
+            gameLoop = requestAnimationFrame(update);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') jump();
+        });
+
+        canvas.addEventListener('click', () => {
+            if (!gameLoop) {
+                obstacles.length = 0;
+                score = 0;
+                obstacleSpeed = 5;
+                player.y = canvas.height - player.height - 10; // Fixed reset logic
+                update();
+            } else {
+                jump();
+            }
+        });
+
+        update();
+    </script>
+</body>
+</html>

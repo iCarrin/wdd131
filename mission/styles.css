@@ -1,0 +1,49 @@
+.content{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 50px;
+    line-height: 1.6;
+    border: #bbbbbd;
+    border-style: outset;
+    border-width: 2px;
+    
+}
+h1{
+    padding-top: 60px;
+    font-weight:548;
+    line-height: .6;
+    letter-spacing: 6px;
+}
+h2{
+    
+    color: #006eb6;
+    font-weight: 549;
+    font-size: medium;
+    padding-bottom: 30px;
+    letter-spacing: 3px;
+    
+}
+
+
+img{
+    display: block;
+    width: 135px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+#text{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.content.dark{
+    background-color: #333;
+    color: white;
+    
+}
+select{
+    
+}
