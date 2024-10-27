@@ -25,3 +25,13 @@ const articles = [
 		stars: '⭐⭐⭐⭐'
 	}
 ]
+const true_main = document.querySelector('.true_main');
+
+for (let i = 0; i < articles.length; i++){
+	const articles = document.createElement(articles[i]);
+	
+}
+const book_section = 
+function add_book(id) {
+	const  = document.createElement()
+}
