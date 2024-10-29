@@ -1,0 +1,44 @@
+body{
+    background-color: #F4F1DE;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+}
+.card{
+    box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.6);
+    height: 300px;
+    grid-column: 2/4;
+    background-color: #5F5449;
+    grid-row: 2;
+    border-radius: 20px;
+}
+
+#front{
+    z-index: 2;
+   
+}
+
+#back{
+    margin-top: 50px;
+    margin-bottom: -50px;
+    margin-left: 120px;
+    margin-right: -120px;
+    z-index: 1;
+    
+}
+button{
+    background-color: #03045E;
+    max-width: 80px;
+    max-height: 40px;
+    margin-top: 60px;
+    margin-left: 40px;
+    grid-row: 3;
+    grid-column: 4;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    color: WHITE;
+    font-weight: bolder;
+    border-radius: 10px;
+
+}
