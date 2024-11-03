@@ -127,7 +127,7 @@ button{
     max-width: 80px;
     max-height: 40px;
     margin-top: 60px;
-    margin-left: 40px;
+    margin-left: -20px;
     grid-row: 3;
     grid-column: 5;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
