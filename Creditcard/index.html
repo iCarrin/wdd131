@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="creditcard.cs">
+    <link rel="stylesheet" href="creditcard.css">
     <script src="creditcard.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <form action="/submit forum">
+    <form action="/submit form">
         <div class="card" id="front">   
             <img
             class="card-image"
@@ -25,13 +25,11 @@
                 <input type="text" id="card_holder" name="card_holder_name" placeholder="Name of card holder" required aria-required="true">
             </div>
             <div class="expiration-group">
-                <label for="experation">Experaiton</label>
+                <label for="expiration">Expiration</label>
                 <div>
                     
-                    <input type="number" id="experation" name="MM" placeholder="MM" aria-required="true">
-                <!-- </div>
-                <div> -->
-                    <!-- <label for="exp_year">YY</label> -->
+                    <input type="number" id="expiration" name="MM" placeholder="MM" required aria-required="true">
+           
                     <input type="number" id="exp_year" name="YY" placeholder="YY" required aria-required="true">
                 </div>
             </div>

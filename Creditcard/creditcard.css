@@ -88,7 +88,7 @@ label{
     justify-content:space-between; 
     /* gap: auto; */
 }
-#experation, #exp_year{
+#expiration, #exp_year{
     width: 40px;
     padding: 8px;
     
