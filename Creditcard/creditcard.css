@@ -8,13 +8,13 @@ form{
 }
 .card{
     box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.6);
-    height: 300px;
+    height: 250px;
     width: 400px;
     grid-column: 3/5;
     background-color: #5F5449;
     grid-row: 2;
     border-radius: 20px;
-    padding: 20px;
+    padding: 30px;
 }
 
 #front{
@@ -22,9 +22,9 @@ form{
     
     /* margin: 10%; */
     display: grid;
-    grid-template-columns: 1fr 80px;
-    grid-template-rows: auto auto auto auto;
-    gap: 15px;
+    grid-template-columns: 1fr 135px; /*ai told me to do this */
+    grid-template-rows: auto auto auto auto; /*ai told me to do the auto trick*/
+    gap: 15px; /*and this*/
 
 }
 
@@ -36,45 +36,67 @@ form{
 .card-image{
     grid-column: 2;
     grid-row: 1;
-    justify-self: end;
+    justify-self: end;  /*and this*/
     height: 55px;
     /* align-self: start; */
-    /* margin-top: 35px; */
+    margin-top: 10px;
 }
 #front p{
     grid-column:1;
     grid-row: 1;
     margin: 0;
+    margin-top: 30px;
     color: white;
+    font-size: 1.5rem;
 }
 label{
     display: block;
     color: white;
     margin-bottom: 5px;
+    font-size: 1.3rem;
 }
 #card_number{
-    grid-column: 1/-1;
+    grid-column: 1/-1;  /*and this*/
     grid-row: 2;
-    width: 100%;
-    padding: 8px;
+    width: 154%;  /*and this*/
+    padding: 8px /*and this*/
+}
+.card-holder-group /*and this whole class*/{
+    grid-column:1;
+    grid-row: 3;
+    
+    
 }
 #card_holder{
+    width:  85%;
+    padding: 8px;
+}
+
+/* #card_holder{
     grid-column: 1;
     grid-row: 4;
-}
-
-
-#experation{
+} */
+.expiration-group/*and this whole group too*/{
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 3;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    
 }
-#exp_year{
-    grid-column: 2;
-    grid-row: 4;
+.expiration-group div {
+    display: flex;
+    justify-content:space-between; 
+    /* gap: auto; */
 }
-
-
-
+#experation, #exp_year{
+    width: 40px;
+    padding: 8px;
+    
+} 
+input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
 
 
 
@@ -87,7 +109,18 @@ label{
     margin-left: 120px;
     margin-right: -120px;
     z-index: 1;
-    
+    display: grid;
+    grid-template-rows: 10% auto 1fr 20% ;
+}
+.black_stripe{
+    height: 60px;
+    width: 100%;
+    grid-rows: 2;
+    background-color: #5F5449;
+    z-index: 3;
+}
+.cvc-group{
+
 }
 button{
     background-color: #03045E;
