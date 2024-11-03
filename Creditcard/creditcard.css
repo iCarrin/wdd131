@@ -112,7 +112,7 @@ input {
     display: grid;
     grid-template-rows: 10% auto 1fr 20% ;
 }
-.black_stripe{
+/* .black_stripe{
     height: 60px;
     width: 100%;
     grid-rows: 2;
@@ -121,7 +121,7 @@ input {
 }
 .cvc-group{
 
-}
+} */
 button{
     background-color: #03045E;
     max-width: 80px;
