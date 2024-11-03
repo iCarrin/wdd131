@@ -40,60 +40,70 @@
 
 function getGrades(inputSelector) {
     // get grades from the input box
-    const input = document.querySelector("grades").value
+    const stringOfGrades = document.querySelector(inputSelector).value;
     
     // split them into an array (String.split(','))
-    let array = stringOfGrades.split(',');
+    const array = stringOfGrades.split(',');
 
     // clean up any extra spaces, and make the grades all uppercase. (Array.map())
-    array = array.trim().toUpperCase();    
+    // array = array.trim().toUpperCase();   
+    const cleanArray = array.map((grade) => grade.trim().toUpperCase());
+    
     // return grades
-    return array
+    return cleanArray;
 }
 
 function lookupGrade(grade) {
 // converts the letter grade to it's GPA point value and returns it
+let gpa = 0
 if (grade === 'A'){
-    const gpa = 4.0;
+    gpa = 4.0;
 } else if (grade === 'B') {
-    const gpa = 3.0;
+    gpa = 3.0;
 } else if (grade === 'C') {
-    const gpa = 2.0;
+    gpa = 2.0;
 }
 return gpa;
 }
 
 function calculateGpa(grades) {
 // gets a list of grades passed in
-const grades = getGrades()
+// const grades = getGrades()
 // convert the letter grades to gpa points
-const gpa = grades.map(lookupGrade)
+const gpa = grades.map((grade) => lookupGrade(grade));
 // calculates the GPA
-const sumGpa = gpa.reduce(function (total, nexItem) {
-    return total + nextItem
-})
+const sumGpa = gpa.reduce(function (total, nextItem) {
+    return total + nextItem;
+});
 const averageGpa = (sumGpa / gpa.length).toFixed(2)
 
 // return the GPA
-return averageGpa
+return averageGpa;
 }
 
 function outputGpa(gpa, selector) {
 // takes a gpa value and displays it in the HTML in the element identified by the selector
-const gpaDisplay = document.createElement("p");
-gpaDisplay.textContent = gpa;
-selector.appendChild(gpaDisplay);
+const outputElement = document.querySelector(selector)
+outputElement.innerText = gpa;
+
+//my attempt
+// const gpaDisplay = document.createElement("p");
+// gpaDisplay.textContent = gpa;
+// selector.appendChild(gpaDisplay);
 }
 
 function clickHandler() {
 // when the button in our html is clicked:
-// button.addEventListener('click',)
 // get the grades entered into the input
-const input = getGrdaes(document.querySelector("grades"))
+const grades= getGrades("#grades") //... why don't we do this all the time?
+// ###const input = getGrades(document.querySelector("grades"));
+
 // calculate the gpa from the grades entered
-const numberGrades = input.map(calculateGpa())
+const gpa = calculateGpa(grades);//why not map? A: because the calculate GPA already maped. It excpects an array
+// ###const numberGrades = input.map(calculateGpa());
 // display the gpa
-numberGrades.map(outputGpa)
+// ###numberGrades.map(outputGpa);
+outputGpa(gpa, "#output")
 }
 
 
