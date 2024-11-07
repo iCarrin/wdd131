@@ -144,7 +144,7 @@ header{
     
 }
 
-.book_section{
+.book_article{
     grid-column: 1/auto;
     display: grid;
     grid-template-columns:180px auto ;
