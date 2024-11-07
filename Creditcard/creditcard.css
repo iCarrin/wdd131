@@ -106,28 +106,38 @@ input {
 #back{
     margin-top: 50px;
     margin-bottom: -50px;
-    margin-left: 120px;
-    margin-right: -120px;
-    z-index: 1;
+    margin-left: 150px;
+    margin-right: -150px;
+    z-index: 0;
     display: grid;
-    grid-template-rows: 10% auto 1fr 20% ;
+    grid-template-rows: 5% auto auto ;
+    /* grid-template-columns: auto 90px; */
 }
-/* .black_stripe{
+.black_stripe{
     height: 60px;
-    width: 100%;
-    grid-rows: 2;
-    background-color: #5F5449;
-    z-index: 3;
+    width: 107.5%;
+    grid-row: 2;
+    background-color: #272727;
+    z-index: 0;
 }
 .cvc-group{
-
-} */
+    z-index: 0;
+    grid-row: last;
+    justify-self: right;
+    margin-top : 10px;
+    margin-bottom: -10px;
+    max-width: 100px;
+}
+#cvc{
+    padding: 8px;
+    max-width: 80px;
+}
 button{
     background-color: #03045E;
     max-width: 80px;
     max-height: 40px;
-    margin-top: 60px;
-    margin-left: -20px;
+    margin-top: 70px;
+    margin-left:10px;
     grid-row: 3;
     grid-column: 5;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
