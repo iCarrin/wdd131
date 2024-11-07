@@ -64,15 +64,3 @@ articles.forEach(book => {
 
 
 
-// function create_article(id) {
-// 	const book_section = id
-// 	function add_book(id) {
-// 		const new_article = document.createElement()
-// 	}
-// }
-
-
-// for (let i = 0; i < articles.length; i++){
-// 	const articles = document.create_article(articles[i]);
-	
-// }
