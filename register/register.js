@@ -43,7 +43,7 @@ function participantTemplate(count) {
 function addParticipant () {
     participantNum += 1
     document.querySelector(".participants").insertAdjacentHTML('beforeend', participantTemplate(participantNum));
-}
+}                              //Ai v                           AI ^
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("add").addEventListener("click", addParticipant);
 });
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function submitForm(event) {
-    event.preventDefault();
-    const allFees = document.querySelectorAll('.fee-input');
+    event.preventDefault();  
+    const allFees = document.querySelectorAll('.fee-input'); //AI
     let feeTotal = 0
-    allFees.forEach(fee => {
+    allFees.forEach(fee => { //AI made this function slick
         feeTotal += parseFloat(fee.value) || 0; //AI helped me with all of this function
     });
     const adultName = document.getElementById("adult_name").value;
@@ -66,3 +66,6 @@ function submitForm(event) {
 }
 
 document.querySelector("form").addEventListener("submit", submitForm)
+
+
+//Now that I look this over, most of it was me, but I used AI heavely to get there. There was  alot of asking it things I should know and pasting my entier code to ask it to find all of my spelling errors and bugs.
