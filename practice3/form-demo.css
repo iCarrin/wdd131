@@ -1,0 +1,92 @@
+/* form-demo.css */
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .errors > p {
+    border: 1px solid red;
+    padding: 0.5em;
+  }
+  /* Style the select arrow for Safari */
+  select::-webkit-inner-spin-button,
+  select::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Style the select arrow for other browsers */
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .hide {
+    display: none; /* Initially hide the credit card input and label */
+  }
+  form{
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+  form > * {
+    margin-bottom: 8px;
+  }
+  .label{
+    font-size: large;
+    font-weight:600;
+  }
+  .input{
+    padding: 8px;
+    border-width: 1px;
+    border-radius: 4px;
+  }
+  #address{
+    padding-bottom: 55px;
+  }
+
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+  #card_num, #pal_name {
+    margin-top: 8px;
+  }
+  
+  
+  form button{
+    background-color: rgb(18, 177, 18);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    height: 36px;
+    width: 112px;
+    font-weight: 600;
+    margin-top: 8px;
+    cursor: pointer;
+ 
+  }
+  /* from ai whole sale */
+
+  .input:focus {
+    outline: 2px solid rgb(18, 177, 18);
+    border-color: transparent;
+  }
+  
+  form button:hover {
+    background-color: rgb(16, 155, 16);
+  }
+  
+  form button:focus {
+    outline: 2px solid rgb(18, 177, 18);
+    outline-offset: 2px;
+  }

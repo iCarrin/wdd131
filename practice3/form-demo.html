@@ -1,0 +1,57 @@
+<!-- form-demo.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="form-demo.css" />
+    <script src="form-demo.js" defer></script>
+  </head>
+  <body>
+    <header><h1>Checkout</h1></header>
+    <main>
+      <section class="errors"></section>
+      <form id="checkoutForm" action="completed.html">
+
+        <!-- <div> -->
+            <label class="label" for="client_name">Full Name:</label>
+            <input class="input" type="text" name="client_name" id="client_name" required>
+        <!-- </div> -->
+
+        <!-- <div> -->
+            <label class="label" for="email">Email:</label>
+            <input class="input" type="email" name="email" id="email" required>
+        <!-- </div> -->
+
+        <!-- <div> -->
+            <label class="label" for="address">Address:</label>
+            <input class="input" type="text" name="address" id="address" required>
+        <!-- </div> -->
+
+        <!-- <div> -->
+            <label class="label" for="payment">Payment Method:</label>
+            <select class="input" name="payment" id="payment" required>
+                <option value="null">Select Payment Method</option>
+                <option value="visa">Visa</option>
+                <option value="master_card">Master Card</option>
+                <option value="paypal">Paypal</option>
+                
+            </select>
+        <!-- </div> -->
+
+        <div class="hide" id="card_container">
+            <label class="label" for="card_num">Credit Card Number:</label>
+            <input class="input" type="text" name="card_num" id="card_num" pattern="[0-9]{16}" placeholder="Enter 16 digits" required>
+        </div>
+
+        <div class="hide" id="paypal_container">
+            <label class="label" for="pal_name">PayPal Username:</label>
+            <input class="input" type="text" name="pal_name" id="pal_name" placeholder="Enter PayPal username" required>
+        </div>
+        <button type="submit">Place Order</button>
+      </form>
+     
+    </main>
+  </body>
+</html>
