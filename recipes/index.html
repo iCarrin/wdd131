@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta property="og:title" content="Apple Crisp">
-    <meta property="og:type" content="Recipe Boook" />
+    <meta property="og:type" content="Recipe_Book" />
     <meta property="og:description" content="A delicious apple crisp served ala mode">
     <meta property="og:image" content="images/apple-crisp.jpg">
     <meta property="og:url" content="https://icarrin.github.io/wdd131/recipe/index">
-    <meta name="twitter:card" content="images/apple-crisp.jpg">
+    <meta type="twitter:card" content="images/apple-crisp.jpg">
 
 
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="recipes.css">
-    <script src="main.js"></script>
+    <script src="main.js" type="module" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -21,64 +21,20 @@
 
     <header> 
         <div class="title"> 
-            <img class="main_icon" src="images/recipe-book.png" alt="Recipi Book logo">
+            <img class="main_icon" src="images/recipe-book.png" alt="Recipe Book logo">
             <h1>RecipeBook</h1>
         </div>
-        <div class="search_form">
-           
+        
+        <form class="search_form">
             <input type="text" id="search" placeholder="Find a Recipe">
-            <img src="images/search.svg" alt="search icon">
-        </div>
+            <button class='search_button'>
+                <img src="images/search.svg" alt="search icon">
+            </button>
+        </form>
+        
     </header>
-
-
-    <main>
-        <div class="recipe_entry">
-            <img class="food_image" src="images/apple-crisp.jpg" alt="apple-crisp">
-            <div class="content_div">
-                <div class="tag_section">
-                    <h4 class="tag">dessert</h4>
-                    <!-- <h4 class="tag">tag2</h4> -->
-                </div>
-                <h3 class="recipe-name">Apple Crisp</h3>
-                <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars"
-                >
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
-                <p class="description">blah blah blah business buisness. Is this working?</p>
-            </div>
-        </div>
-        <!-- <div class="recipe_entry">
-            <img class="food_image" src="images/apple-crisp.jpg" alt="apple-crisp">
-            <div class="content_div">
-                <div class="tag">dessert</div>
-                <div class="tag">tag2</div>
-                <h3 class="recipe-name">Apple Crisp</h3>
-                <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars"
-                >
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
-                <p class="description"></p>
-            </div> -->
-        </div>
+    <main> 
     </main>
-
-
-
     <footer>
         <div>
             <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->

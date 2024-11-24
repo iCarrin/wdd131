@@ -14,7 +14,7 @@
 
 body{
     font-family: var(--primary-font);
-    margin: 10%;
+    margin: 8%;
 }
 
 header{
@@ -46,7 +46,7 @@ img {
     /* max-width: 100%; */
 }
 .main_icon {
-    /* size: 1em; */
+   
     max-width: 25%;
     height: max-content;
 }
@@ -59,23 +59,30 @@ img {
     gap: 0;
     /* width: 100%; */
     margin-bottom: 32px;
-    justify-content: center;
+    justify-content:space-between;
 }
 
 #search{
     padding: 12px;
-    border-radius: 5px;
-    border: solid #333 3px;
-    width:100%;
-}
-.search_form img{
-    height: 32px;
-    width: max-content;
-    margin-left: -43px;
-    margin-top: 2px;
-    padding: 4px;
-    border-left: solid #333 3px;
+    border-radius: 5px 0px 0px 5px ;
+    border: solid #333 3px ;
+    border-right: none;
+    width:90%;
     
+}
+.search_button{
+    /* margin-left: -80px; */
+    /* margin-top: 2px; */
+    /* padding: px; */
+    border: solid #333 3px;
+    /* border-left: none; */
+    border-radius: 0px 5px 5px 0px;
+    
+    width: 10%;
+}
+.search_button img{
+    height: 32px;
+    /* width: auto; */
 }
 
 main {
@@ -85,27 +92,34 @@ main {
 .recipe_entry{
     border:solid #333 3px;
     border-radius: 5px;
-    padding: 6%;
+    padding: 4%;
     display: flex;
     flex-direction: column;
+    height: auto;
+    margin-bottom: 2%;
 }
 
 .tag_section{
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-
+    flex-direction:row;
+    flex-wrap: wrap;
+    gap: 8px;
 }
+
 .tag{
     display: flex;
     justify-content: center;
     align-items: center;
     border: solid #333 2px;
     /* width: auto; */
-    height: 40px;   
-    font-size: 1.4rem;
+    height:1.6em;   
+    width:fit-content;
+    font-size: 1.3rem;
     padding: 0px 12px;
+    margin: 4px 4px;
 }
+
+
 
 main h3 {
     font-family: var(--secondary-font);
@@ -143,7 +157,7 @@ footer a{
     font-size: 1.05rem;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 700px){
     .title h1{
         font-size:4rem;
     
@@ -156,6 +170,7 @@ footer a{
     .food_image{
         width:60%;
         height: max-content;
+        object-fit: cover;
         align-self: center;   
     }
 

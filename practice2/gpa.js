@@ -115,3 +115,7 @@ outputGpa(gpa, "#output")
 document
   .querySelector("#submitButton")
   .addEventListener("click", clickHandler);
+
+
+
+  
