@@ -1,13 +1,9 @@
-/* if you are using any Google fonts change the font names below to your fonts. 
-Any spaces in your font name should be replaced with a +. 
-Fonts are separated by a | */
-@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
   /* change the values below to your colors from your palette */
   --primary-color: #c0b7b1;
-  --secondary-color: #3d3b30;
+  --secondary-color: #8b8a83;
   --accent1-color: #05508b;
   --accent2-color: black;
 
@@ -30,155 +26,212 @@ Fonts are separated by a | */
   --nav-hover-link-color: white;
   --nav-hover-background-color: var(--primary-color);
 }
-
-/*  Look around below...but DON'T CHANGE ANYTHING! */
-
-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4em;
-  font-size: 18px;
+body{
   background-color: var(--primary-color);
-}
-img {
-  display: block;
-  margin: 0 auto;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--heading-font);
-  color: var(--headline-color-on-white);
-}
-h2 {
-  text-align: center;
-}
-hr {
-  height: 3px;
-  margin: 35px 0;
-  background: var(--accent1-color);
-}
-header {
-  padding: 1em;
-  text-align: center;
-  color: var(--paragraph-color-on-color);
-  background-color: var(--paragraph-background-color);
-}
-header > h1,
-header > h2 {
-  color: var(--headline-color-on-color);
-}
+  margin: 0;
 
-p {
-  font-family: var(--paragraph-font);
-  color: var(--paragraph-color);
-  padding: 1em;
 }
-.colors {
-  width: 100%;
-  min-width: 350px;
-  margin: 30px auto;
-  text-align: center;
-}
-.colors th {
-  background-color: #999;
-}
-.colors td {
-  width: 25%;
-  height: 3em;
-}
-
-.primary {
-  background-color: var(--primary-color);
-}
-.secondary {
+header{
   background-color: var(--secondary-color);
-}
-.accent1 {
-  background-color: var(--accent1-color);
-}
-.accent2 {
-  background-color: var(--accent2-color);
-  color: white;
-}
-
-p.colored {
-  background-color: var(--paragraph-background-color);
-  color: var(--paragraph-color-on-color);
-}
-
-nav {
-  background-color: var(--nav-background-color);
-  line-height: 3em;
-  text-align: center;
-  font-size: 1.2em;
-}
-nav {
-  list-style-type: none;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  height: 5rem;
 }
-nav a {
-  padding: 1em;
-  min-width: 120px;
-  text-decoration: none;
-  padding: 10px;
+.logo{
+  margin-left: 32px;
+  z-index: 1;
 }
-nav a:link,
-nav a:visited {
-  color: var(--nav-link-color);
+.logosmall{
+  display: none;
 }
-nav a:hover {
-  color: var(--nav-hover-link-color);
-  background-color: var(--nav-hover-background-color);
+.header_splash {
+  font-size:4vw;
+  font-family: var(--paragraph-font);
+  color: RGBa(0, 0, 0, .3);
+  font-weight: 500;
+  /* margin-top: 1.8rem; */
+  z-index: -1;
+  position: absolute;
+  margin-left: 18%;
+  
 }
+form{
+  margin-right: 32px;
+  
+  display: flex;
+  align-content: center;
+  gap: 9px;
+  z-index: 1;
+}
+.search_icon{
+  width:auto;
+  height:2rem;
+}
+/* form input{
+  background-color: RGBa(255, 255, 255, .3);
+  border: none;
+  font-size: 1em;
+  
+} */
 
-.sitemap {
+
+main{
   display: grid;
+  grid-template-columns: auto 1fr;
+  position: relative;
+}
+
+aside{
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+  max-height: fit-content;
+  margin: 4% 0 0 1%;
+  background-color: var(--secondary-color);
+  /* border: solid var(--accent2-color) 3px; */
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  padding: 0 4px 14px 4px;
+  gap:4%;
+  
+}
+
+.hero{
+  grid-column: 1 /-1;
+  grid-row: 1;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+aside a {
+  color: var(--accent1-color);
+  font-size: large;
+  font-family: var(--paragraph-font);
+}
+.page_header{
+  padding: 16px;
+  margin:0 25% 0 5%;
+  font-family: var(--header-font);
+
+}
+.page_header h1{
+  color: var(--accent1-color);
+  font-family: var(--paragraph-font);
+  border-bottom: solid var(--accent1-color)  3px;
+}
+.all_project_holder{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+/* margin: 2%; */
+}
+.project_holder{
+  width: fit-content;
+  padding: 2%;
+ 
+}
+.text_display{
+  display: none;
+}
+.show_text{
+  display:block;
+}
+
+.line{
+  border-bottom: solid 2px var(--accent1-color);
+  margin: -10px 0 -20px 0;
+}
+
+.button_header{
+  background-color: var(--secondary-color);
+  width:auto;
+  display: flex;
   justify-content: center;
-
-  grid-template-columns: repeat(6, 15%);
-  grid-template-rows: 3em 1.5em 1.5em 3em;
-  grid-template-areas:
-    ". . home home . ."
-    ". . . top . ."
-    ". left left right right ."
-    "page2 page2 . . page3 page3";
+  align-items: center;
+  font-family: var(--paragraph-font);
+  font-weight: 400;
+  
+  box-shadow: 1px 2px 6px 1px rgb(75, 75, 75);
 }
-.sitemap > div {
-  text-align: center;
+.image_clicker{
+  top:0;
+  left:0;
+  padding: 0;
+  margin: 0;
+  border:none ;
+  padding-inline: 0;
+  padding-block:0;
+  outline: none;
+  height: 126px;
+  box-shadow: 1px 2px 6px 1px rgb(75, 75, 75);
 }
-.sm-home {
-  grid-area: home;
-  background-color: #ccc;
-  line-height: 3em;
+.image_clicker:hover{
+  box-shadow: 0px 3px 3px 3px var(--accent1-color);
 }
-.sm-page2 {
-  grid-area: page2;
-  background-color: #ccc;
-  line-height: 3em;
-}
-.sm-page3 {
-  grid-area: page3;
-  background-color: #ccc;
-  line-height: 3em;
+.image_clicker img{
+  box-shadow: 1px 2px 6px 1px rgb(75, 75, 75);
 }
 
-.top {
-  grid-area: top;
-  border-left: 1px solid;
+
+footer{
+  background-color: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2%;
+  ;
 }
 
-.left {
-  grid-area: left;
-  border-top: 1px solid;
-  border-left: 1px solid;
+.footerLink{
+  max-width: 3rem;
+  min-width: 1rem;
+  max-height: fit-content;
+  margin: 4px 8px;
+}
+@media screen and (max-width: 600px) {
+aside{
+ gap:8%;
+}
+form input{
+  display: None;
+}
+.logobig{
+  display: none;
+}
+.logosmall{
+  display: block;
+  margin-bottom: 60%;
+}
+.header_splash{
+  margin-left: 25%;
 }
 
-.right {
-  grid-area: right;
-  border-top: 1px solid;
-  border-right: 1px solid;
+
 }
+@media screen and (max-width: 1000px) {
+  aside{
+   gap:8%;
+  }
+  .header_splash{
+    font-size: 3.8vw;
+    margin-left: 13%;
+  }
+  
+  .logobig{
+    display: none;
+  }
+  .logosmall{
+    display: block;
+    margin-bottom: 60%;
+  }
+  
+ 
+  
+  }
